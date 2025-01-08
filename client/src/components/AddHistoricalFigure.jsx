@@ -1,7 +1,8 @@
 import axios from "axios";
 import React, { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
-import styles from "./Add.module.css";
+import Navbar from "./Navbar";
+import styles from "./AddHistoricalFigure.module.css";
 
 const AddHistoricalFigure = (props) => {
   const navigate = useNavigate();
@@ -52,13 +53,8 @@ const AddHistoricalFigure = (props) => {
   };
 
   return (
-    <>
-      <nav className={styles.nav}>
-        <h1>Add Historical Figure</h1>
-        <button>
-          <Link to="/historical-figures">Back to Timeline</Link>
-        </button>
-      </nav>
+    <div className={styles.page}>
+      <Navbar></Navbar>
       <div className={styles.container}>
         <form onSubmit={handleSubmit}>
           {errors.map((err, index) => (
@@ -100,13 +96,13 @@ const AddHistoricalFigure = (props) => {
               />
               <select
                 value={lifeSpan.birthEra}
-                onChange={(e) =>handleLifeSpanChange('birthEra', e.target.value)}
+                onChange={(e) => handleLifeSpanChange('birthEra', e.target.value)}
               >
                 <option value='AD'>AD</option>
                 <option value='BC'>BC</option>
               </select>
             </div>
-          
+
             <label>Death Year:</label>
             <div className={styles.formSection__lifeSpan}>
               <input
@@ -116,7 +112,7 @@ const AddHistoricalFigure = (props) => {
               />
               <select
                 value={lifeSpan.deathEra}
-                onChange={(e) =>handleLifeSpanChange('deathEra', e.target.value)}
+                onChange={(e) => handleLifeSpanChange('deathEra', e.target.value)}
               >
                 <option value='AD'>AD</option>
                 <option value='BC'>BC</option>
@@ -124,11 +120,11 @@ const AddHistoricalFigure = (props) => {
             </div>
             <br />
 
-              <label>Achievements:</label>
-              <textarea
-                value={achievements}
-                onChange={(e) => setAchievements(e.target.value)}
-              />
+            <label>Achievements:</label>
+            <textarea
+              value={achievements}
+              onChange={(e) => setAchievements(e.target.value)}
+            />
 
             <label>Notable Quote:</label>
             <input
@@ -142,7 +138,7 @@ const AddHistoricalFigure = (props) => {
           </div>
         </form>
       </div>
-    </>
+    </div>
   );
 };
 
