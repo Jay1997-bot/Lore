@@ -11,7 +11,7 @@ const ViewHistoricalFigure = () => {
   // Requests figure data by id
   useEffect(() => {
     axios
-      .get(`http://localhost:8000/api/historical-figures/${id}`)
+      .get(`https://lore-4.onrender.com/api/historical-figures/${id}`)
       .then((res) => {
         console.log(res);
         setHistoricalFigure(res.data.figure);

@@ -12,7 +12,7 @@ const HistoricalFiguresTimeline = () => {
   useEffect(() => {
     // Fetch data from the API
     axios
-      .get('http://localhost:8000/api/historical-figures')
+      .get('https://lore-4.onrender.com/api/historical-figures')
       .then((response) => {
         if (response.data && response.data.figures) {
           console.log(response.data.figures)

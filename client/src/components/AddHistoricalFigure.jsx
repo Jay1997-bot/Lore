@@ -30,7 +30,7 @@ const AddHistoricalFigure = (props) => {
   const handleSubmit = (e) => {
     e.preventDefault();
     axios
-      .post("http://localhost:8000/api/historical-figures", {
+      .post("https://lore-4.onrender.com/api/historical-figures", {
         name,
         img,
         era,

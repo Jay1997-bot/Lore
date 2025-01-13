@@ -12,7 +12,7 @@ const Main = (props) => {
   //requests all figures from db and sets figures array
   useEffect(() => {
     axios
-      .get("http://localhost:8000/api/historical-figures")
+      .get("https://lore-4.onrender.com/api/historical-figures")
       .then((res) => {
         console.log(res.data.figures)
         const sortedFigures = sortFigures([...figures, ...res.data.figures])
@@ -45,7 +45,7 @@ const Main = (props) => {
   //Deletes specific user based on id
   const handleDelete = (id) => {
     axios
-      .delete("http://localhost:8000/api/historical-figures/" + id)
+      .delete("https://lore-4.onrender.com/api/historical-figures/" + id)
       .then((res) => {
         setFigures(figures.filter((figure) => figure._id !== id));
       })
